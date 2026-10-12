@@ -1,0 +1,48 @@
+# Builds the site into the `deploy` branch, which the Pi pulls: public/ from main plus
+# data/power.json from the `data` branch, which a cluster CronJob force-pushes hourly and
+# then asks for this run with a repository_dispatch. `deploy` is always a single commit,
+# so neither it nor main collects a commit per stats update.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [power-stats]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Every run builds from the latest main and data, so a newer run makes an older one moot.
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Build
+        run: |
+          mkdir out
+          cp -R public/. out/
+          mkdir -p out/data
+          # Before the first CronJob run there's no data branch; build without stats.
+          if git fetch --depth 1 origin data; then
+            git show FETCH_HEAD:data/power.json > out/data/power.json
+          fi
+
+      - name: Push to deploy
+        working-directory: out
+        run: |
+          git init --quiet --initial-branch deploy
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit --quiet -m "Deploy ${GITHUB_SHA::7}"
+          git push --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" deploy:deploy
