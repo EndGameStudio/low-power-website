@@ -1,0 +1,27 @@
+#!/bin/sh
+# Installed on the Pi as /usr/local/bin/site-pull and run by the deploy user's crontab:
+#   */15 * * * * /usr/local/bin/site-pull 2>&1 | logger -t site-pull
+# Pull the built site from the deploy branch on GitHub and publish it to the web root
+# when it has changed. deploy is a single commit that's force-pushed on every update.
+# The checkout stays in $SRC so nginx never serves .git.
+set -eu
+
+SRC=/srv/site
+DEST=/var/www/low-power
+
+cd "$SRC"
+before=$(git rev-parse HEAD)
+git fetch --quiet --depth 1 origin deploy
+after=$(git rev-parse FETCH_HEAD)
+
+[ "$before" = "$after" ] && exit 0
+
+git reset --quiet --hard FETCH_HEAD
+git clean --quiet -fdx
+rsync -a --delete --exclude .git ./ "$DEST/"
+
+# Each update orphans the last commit; drop it rather than keep old copies on the SD card.
+git reflog expire --expire=now --all
+git gc --quiet --prune=now
+
+echo "published $(git rev-parse --short HEAD)"
