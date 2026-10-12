@@ -26,19 +26,27 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '26'
+          cache: 'npm'  # Speeds up builds by caching node_modules
 
-      - name: Build
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get Recent Data
         run: |
-          mkdir out
-          cp -R public/. out/
-          mkdir -p out/data
           # Before the first CronJob run there's no data branch; build without stats.
           if git fetch --depth 1 origin data; then
-            git show FETCH_HEAD:data/power.json > out/data/power.json
+            git show FETCH_HEAD:data/power.json > data/power.json
           fi
 
+      - name: Build Eleventy site
+        run: npx @11ty/eleventy
+
       - name: Push to deploy
-        working-directory: out
+        working-directory: public
         run: |
           git init --quiet --initial-branch deploy
           git config user.name "github-actions[bot]"

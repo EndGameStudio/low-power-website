@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main>{{content | safe}}</main>
+  <div>
+    <h3>Power Metrics</h3>
+    <dl>
+      <dt>Week To Date</dt>
+      <dd>{{power.week_to_date.wh}} watt hours</dd>
+    </dl>
+    <dl>
+      <dt>Month To Date</dt>
+      <dd>{{power.month_to_date.wh}} watt hours</dd>
+    </dl>
+    <dl>
+      <dt>Year To Date</dt>
+      <dd>{{power.year_to_date.wh}} watt hours</dd>
+    </dl>
+  </div>
+</body>
+</html>

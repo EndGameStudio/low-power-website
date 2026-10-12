@@ -1,0 +1,25 @@
+{
+  "name": "low-power-website",
+  "version": "1.0.0",
+  "description": "I'm curious how to host a simple website that updates periodically with power usage stats. Eventually, I want to move the site to a full solar power. Heck, maybe even wind power!",
+  "main": "eleventy.config.js",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EndGameStudio/low-power-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/EndGameStudio/low-power-website/issues"
+  },
+  "homepage": "https://github.com/EndGameStudio/low-power-website#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}
