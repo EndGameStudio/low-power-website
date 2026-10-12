@@ -6,11 +6,11 @@ module.exports = function(eleventyConfig) {
       if (!dateVal) return "";
     
         // If it's already a JS Date object, convert to Luxon
-        const d = (dateVal instanceof Date) 
+        const utcDate = (dateVal instanceof Date) 
         ? DateTime.fromJSDate(dateVal, { zone: "utc" })
         : DateTime.fromISO(dateVal, { zone: "utc" });
         
-        return d.toFormat(format);
+        return utcDate.setZone("America/Los_Angeles").toFormat(format);
     });
 
 	return {
