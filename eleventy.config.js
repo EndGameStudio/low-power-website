@@ -13,6 +13,8 @@ module.exports = function(eleventyConfig) {
         return utcDate.setZone("America/Los_Angeles").toFormat(format);
     });
 
+    eleventyConfig.addFilter('mapKey', (list, key) => list.map((item) => (item[key])));
+
 	return {
         dir: {
             output: 'public',

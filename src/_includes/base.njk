@@ -10,11 +10,17 @@
   <main>{{content | safe}}</main>
   <div>
     <h3>Power Metrics</h3>
-    {% if (power.last_7_days | last)%}
-    {% set todays_metrics = power.last_7_days | last %}
+    {% if (power.last_24_hours | last)%}
     <dl>
-      <dt>{{todays_metrics.start | readableDate("LLLL dd, yyyy")}}</dt>
-      <dd>{{todays_metrics.wh}} watt hours</dd>
+      <dt>{{(power.last_24_hours | last).start | readableDate("LLLL dd, yyyy")}}</dt>
+      <dd>{{power.last_24_hours | mapKey('wh') | sum | round(2) }} watt hours</dd>
+    </dl>
+    {% endif %}
+    {% if (power.last_7_days | last)%}
+    {% set yesterdays_metrics = power.last_7_days | last %}
+    <dl>
+      <dt>{{yesterdays_metrics.start | readableDate("LLLL dd, yyyy")}}</dt>
+      <dd>{{yesterdays_metrics.wh}} watt hours</dd>
     </dl>
     {% endif %}
     <dl>
