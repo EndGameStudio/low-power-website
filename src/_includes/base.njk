@@ -10,6 +10,13 @@
   <main>{{content | safe}}</main>
   <div>
     <h3>Power Metrics</h3>
+    {% if (power.last_7_days | last)%}
+    {% set todays_metrics = power.last_7_days | last %}
+    <dl>
+      <dt>{{todays_metrics.start | readableDate("LLLL dd, yyyy")}}</dt>
+      <dd>{{todays_metrics.wh}} watt hours</dd>
+    </dl>
+    {% endif %}
     <dl>
       <dt>Week To Date</dt>
       <dd>{{power.week_to_date.wh}} watt hours</dd>
