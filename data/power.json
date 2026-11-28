@@ -1,0 +1,41 @@
+{
+  "updated": "2026-11-28T15:05:03Z",
+  "year_to_date": { "avg_watts": 1.71, "peak_watts": 3.42, "wh": 2117.61 },
+  "month_to_date": { "avg_watts": 1.67, "peak_watts": 2.57, "wh": 1092.92 },
+  "week_to_date": { "avg_watts": 1.67, "peak_watts": 2.14, "wh": 211.23 },
+  "last_7_days": [
+    { "start": "2026-11-21T08:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 2.09, "wh": 39.98 },
+    { "start": "2026-11-22T08:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 2.09, "wh": 39.90 },
+    { "start": "2026-11-23T08:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 2.08, "wh": 39.69 },
+    { "start": "2026-11-24T08:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 2.09, "wh": 39.57 },
+    { "start": "2026-11-25T08:00:00Z", "watts": 1.71, "avg_watts": 1.67, "peak_watts": 2.14, "wh": 40.01 },
+    { "start": "2026-11-26T08:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 2.14, "wh": 40.12 },
+    { "start": "2026-11-27T08:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 2.14, "wh": 40.02 }
+  ],
+  "last_24_hours": [
+    { "start": "2026-11-27T15:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.66 },
+    { "start": "2026-11-27T16:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-27T17:00:00Z", "watts": 1.66, "avg_watts": 1.68, "peak_watts": 1.87, "wh": 1.68 },
+    { "start": "2026-11-27T18:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-27T19:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-27T20:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-27T21:00:00Z", "watts": 1.71, "avg_watts": 1.67, "peak_watts": 2.08, "wh": 1.67 },
+    { "start": "2026-11-27T22:00:00Z", "watts": 1.66, "avg_watts": 1.68, "peak_watts": 2.03, "wh": 1.68 },
+    { "start": "2026-11-27T23:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T00:00:00Z", "watts": 1.71, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T01:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T02:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.98, "wh": 1.67 },
+    { "start": "2026-11-28T03:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T04:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T05:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 2.14, "wh": 1.67 },
+    { "start": "2026-11-28T06:00:00Z", "watts": 1.71, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T07:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T08:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T09:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T10:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T11:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T12:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.71, "wh": 1.67 },
+    { "start": "2026-11-28T13:00:00Z", "watts": 1.66, "avg_watts": 1.67, "peak_watts": 1.82, "wh": 1.67 },
+    { "start": "2026-11-28T14:00:00Z", "watts": 1.66, "avg_watts": 1.68, "peak_watts": 2.09, "wh": 1.68 }
+  ]
+}
